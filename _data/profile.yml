@@ -21,32 +21,30 @@ short_bio: >-
   <p>
     I am currently a first-year PhD student at the National University of Singapore, supervised by 
     <a href="https://www.mornin-feng.com/" target="_blank">Prof. Mengling Feng</a>. 
-    My research focuses on developing trustworthy and agentic large language models, with a particular emphasis on 
-    multi-modality intelligence in healthcare applications.
   </p>
   <p>
-    My work aims to enhance the reliability and interpretability of AI systems in high-stakes medical domains, 
-    ensuring that these technologies can be safely and effectively deployed to assist healthcare professionals 
-    and improve patient outcomes.
+    Reviewer for NIPS, IJCAI, ACM TIST, with over 10 papers reviewed.
   </p>
   <p>
     <strong>Research Interests:</strong> Trustworthy and Agentic LLM • Multi-modality Intelligence in Healthcare
   </p>
+  <p style="border: 2px solid #007bff; border-radius: 10px; padding: 10px; display: inline-block; text-align: center; background-color: #e6f3ff;">Looking for a summer 26' internship!! 🙏</p>
+
 
 portrait_url: /assets/images/photos/portrait.jpg
 portrait_caption: >-
 
 education:
 - name: National University of Singapore
-  logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/NUS.png
   position: Ph.D. in Artificial Intelligence
   date: Jan. 2025 - present
 - name: The University of Hong Kong
-  logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/HKU.jpg
   position: M.Sc. in Artificial Intelligence
   date: Sep. 2022 - Jul. 2024
 - name: The Chinese University of Hong Kong, Shenzhen
-  logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/CU.png
   position: B.Sc. in Statistics, Data Science Stream
   date: Sep. 2018 - May. 2022
 
@@ -59,7 +57,7 @@ education:
 awards:
 - name: Full Ph.D. Scholarship, National University of Singapore
   date: 2025
-- name: Outstanding Graduate, CUHK-Shenzhen (Top 5%)
+- name: Outstanding College Graduate, CUHK-Shenzhen Harmonia College
   date: 2022
 - name: Undergraduate Research Excellence Award, CUHK-Shenzhen
   date: 2021
