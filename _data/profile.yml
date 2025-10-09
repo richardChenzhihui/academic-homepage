@@ -38,12 +38,15 @@ portrait_caption: >-
 
 education:
 - name: National University of Singapore
+  logo: /assets/images/badges/PKU_red.png
   position: Ph.D. in Artificial Intelligence
   date: Jan. 2025 - present
 - name: The University of Hong Kong
+  logo: /assets/images/badges/PKU_red.png
   position: M.Sc. in Artificial Intelligence
   date: Sep. 2022 - Jul. 2024
 - name: The Chinese University of Hong Kong, Shenzhen
+  logo: /assets/images/badges/PKU_red.png
   position: B.Sc. in Statistics, Data Science Stream
   date: Sep. 2018 - May. 2022
 
