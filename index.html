@@ -28,3 +28,28 @@ navbar_title: Home
         title='<i class="fas fa-star"></i> Selected Publications'
     %}
 {% endif %}
+
+<script>
+// Hide items based on language after page load
+document.addEventListener('DOMContentLoaded', function() {
+    function filterContentByLanguage() {
+        const currentLang = localStorage.getItem('language') || 'en';
+        
+        // Filter publications and news by adding data-lang attributes
+        const publicationItems = document.querySelectorAll('[data-lang]');
+        publicationItems.forEach(item => {
+            const itemLang = item.getAttribute('data-lang');
+            if (itemLang && itemLang !== currentLang) {
+                item.style.display = 'none';
+            } else {
+                item.style.display = '';
+            }
+        });
+    }
+    
+    filterContentByLanguage();
+    
+    // Re-filter when language changes
+    window.addEventListener('languageChanged', filterContentByLanguage);
+});
+</script>

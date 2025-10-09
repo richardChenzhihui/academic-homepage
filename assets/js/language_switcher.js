@@ -108,7 +108,7 @@
                     date: "2025"
                 },
                 {
-                    name: "Outstanding College Graduate, CUHK-Shenzhen Harmonia College",
+                    name: "Outstanding College Graduate, CUHK-Shenzhen Diligentia College",
                     date: "2022"
                 },
                 {
@@ -155,7 +155,7 @@
                     date: "2025"
                 },
                 {
-                    name: "香港中文大学（深圳）和声书院优秀毕业生",
+                    name: "香港中文大学（深圳）祥波书院优秀毕业生",
                     date: "2022"
                 },
                 {
@@ -300,6 +300,9 @@
         const newLang = currentLang === 'en' ? 'zh' : 'en';
         setCurrentLanguage(newLang);
         applyTranslations(newLang);
+        
+        // Dispatch custom event for language change
+        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: newLang } }));
     };
 
     // Initialize on page load
