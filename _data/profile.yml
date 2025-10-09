@@ -19,18 +19,18 @@ linkedin: richard-chen~
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    Hi! It's Zhihui here! ツ
+    I am currently a first-year PhD student at the National University of Singapore, supervised by 
+    <a href="https://www.mornin-feng.com/" target="_blank">Prof. Mengling Feng</a>. 
+    My research focuses on developing trustworthy and agentic large language models, with a particular emphasis on 
+    multi-modality intelligence in healthcare applications.
   </p>
   <p>
-    I am currently a first-year PhD student at NUS, working on making AI systems more trustworthy and helpful in healthcare. 
-    I spend my days teaching machines to be honest (unlike some humans I know 😉), and my nights wondering if my models 
-    are secretly plotting against me.
+    My work aims to enhance the reliability and interpretability of AI systems in high-stakes medical domains, 
+    ensuring that these technologies can be safely and effectively deployed to assist healthcare professionals 
+    and improve patient outcomes.
   </p>
   <p>
     <strong>Research Interests:</strong> Trustworthy and Agentic LLM • Multi-modality Intelligence in Healthcare
-  </p>
-  <p>
-    Looking for research collaborations and internship opportunities! 🚀
   </p>
 
 portrait_url: /assets/images/photos/portrait.jpg
