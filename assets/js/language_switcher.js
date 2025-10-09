@@ -1,74 +1,52 @@
-// Language switcher functionality
+// Language switcher functionality - Simplified version
 (function() {
-    // Translation dictionary
+    // Translation dictionary for UI elements
     const translations = {
         en: {
-            // Profile card
             'Google Scholar': 'Google Scholar',
             'GitHub': 'GitHub',
             'WeChat': 'WeChat',
-            'Twitter': 'Twitter',
             'LinkedIn': 'LinkedIn',
             'ORCID': 'ORCID',
             'Curriculum Vitae': 'Curriculum Vitae',
             'Close': 'Close',
-            
-            // Experience card
             'Education': 'Education',
             'Experience': 'Experience',
             'Honors & Awards': 'Honors & Awards',
-            
-            // News card
             'News': 'News',
-            
-            // Publication card
             'Selected Publications': 'Selected Publications',
             'Publications': 'Publications',
-            
-            // Navigation
             'Home': 'Home',
-            'Publications': 'Publications',
             'Showcase': 'Showcase',
             'Menu': 'Menu',
-            
-            // Language toggle
-            'lang_toggle': '中文'
+            'lang_toggle': '中文',
+            'view all': 'view all',
+            'All publications': 'All publications'
         },
         zh: {
-            // Profile card
             'Google Scholar': '谷歌学术',
             'GitHub': 'GitHub',
             'WeChat': '微信',
-            'Twitter': 'Twitter',
             'LinkedIn': '领英',
             'ORCID': 'ORCID',
             'Curriculum Vitae': '简历',
             'Close': '关闭',
-            
-            // Experience card
             'Education': '教育经历',
             'Experience': '工作经历',
             'Honors & Awards': '荣誉奖项',
-            
-            // News card
             'News': '最新动态',
-            
-            // Publication card
             'Selected Publications': '精选论文',
             'Publications': '论文发表',
-            
-            // Navigation
             'Home': '首页',
-            'Publications': '论文发表',
             'Showcase': '项目展示',
             'Menu': '菜单',
-            
-            // Language toggle
-            'lang_toggle': 'EN'
+            'lang_toggle': 'EN',
+            'view all': '查看全部',
+            'All publications': '全部论文'
         }
     };
 
-    // Profile data
+    // Profile data in both languages
     const profileData = {
         en: {
             navbar_name: "Zhihui Chen",
@@ -166,67 +144,47 @@
         }
     };
 
-    // Get current language from localStorage or default to 'en'
+    // Get/set language from localStorage
     function getCurrentLanguage() {
         return localStorage.getItem('language') || 'en';
     }
 
-    // Set current language
     function setCurrentLanguage(lang) {
         localStorage.setItem('language', lang);
-    }
-
-    // Translate text nodes
-    function translateElement(element, lang) {
-        const text = element.textContent.trim();
-        if (translations[lang][text]) {
-            element.textContent = translations[lang][text];
-        }
     }
 
     // Update profile content
     function updateProfileContent(lang) {
         const data = profileData[lang];
         
-        // Update navbar name
+        // Update navbar and primary name
         const navbarName = document.querySelector('.navbar-brand strong');
-        if (navbarName) {
-            navbarName.textContent = data.navbar_name;
-        }
+        if (navbarName) navbarName.textContent = data.navbar_name;
         
-        // Update primary name
         const primaryName = document.querySelector('.h1.font-weight-normal');
-        if (primaryName) {
-            primaryName.childNodes[0].textContent = data.primary_name + ' ';
-        }
+        if (primaryName) primaryName.childNodes[0].textContent = data.primary_name + ' ';
         
         // Update position
         const position = document.querySelector('.text-profile-position');
-        if (position) {
-            position.innerHTML = data.positions + '<br/>';
-        }
+        if (position) position.innerHTML = data.positions + '<br/>';
         
         // Update bio
         const bio = document.querySelector('.text-profile-bio');
-        if (bio) {
-            bio.innerHTML = data.short_bio;
-        }
+        if (bio) bio.innerHTML = data.short_bio;
         
         // Update education
         const educationItems = document.querySelectorAll('.col-md-6 .mx-2 .list-unstyled.mb-1 .media');
-        if (educationItems.length >= 3) {
-            educationItems.forEach((item, index) => {
-                if (data.education[index]) {
-                    const nameDiv = item.querySelector('.media-body > div:first-child');
-                    const positionDiv = item.querySelector('.media-body .small.d-flex > div:first-child');
-                    const dateDiv = item.querySelector('.media-body .small.d-flex > div:last-child em');
-                    
-                    if (nameDiv) nameDiv.textContent = data.education[index].name;
-                    if (positionDiv) positionDiv.textContent = data.education[index].position;
-                    if (dateDiv) dateDiv.textContent = data.education[index].date;
-                }
-            });
-        }
+        educationItems.forEach((item, index) => {
+            if (data.education[index]) {
+                const nameDiv = item.querySelector('.media-body > div:first-child');
+                const positionDiv = item.querySelector('.media-body .small.d-flex > div:first-child');
+                const dateDiv = item.querySelector('.media-body .small.d-flex > div:last-child em');
+                
+                if (nameDiv) nameDiv.textContent = data.education[index].name;
+                if (positionDiv) positionDiv.textContent = data.education[index].position;
+                if (dateDiv) dateDiv.textContent = data.education[index].date;
+            }
+        });
         
         // Update awards
         const awardsList = document.querySelector('.col-md-6 .mx-2 .list.small.pl-3.mb-1');
@@ -244,54 +202,170 @@
         }
     }
 
-    // Apply translations to the page
-    function applyTranslations(lang) {
-        // Update navigation links
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        navLinks.forEach(link => {
-            translateElement(link, lang);
-        });
+    // Translate UI text elements
+    function translateUI(lang) {
+        const t = translations[lang];
         
         // Update headings
-        const headings = document.querySelectorAll('h6');
-        headings.forEach(heading => {
-            const icon = heading.querySelector('i');
-            const text = heading.textContent.replace(/\s+/g, ' ').trim();
+        document.querySelectorAll('h6').forEach(h6 => {
+            const icon = h6.querySelector('i');
+            const text = h6.textContent.trim().replace(/\s+/g, ' ');
             
             if (icon) {
-                const textWithoutIcon = text.replace(icon.className, '').trim();
-                if (translations[lang][textWithoutIcon]) {
-                    heading.innerHTML = icon.outerHTML + ' ' + translations[lang][textWithoutIcon];
-                }
-            } else if (translations[lang][text]) {
-                heading.textContent = translations[lang][text];
+                const iconClass = icon.className;
+                const textWithoutIcon = text.replace(iconClass, '').trim();
+                Object.keys(translations.en).forEach(key => {
+                    if (textWithoutIcon.includes(key) && t[key]) {
+                        h6.innerHTML = h6.innerHTML.replace(key, t[key]);
+                    }
+                });
             }
         });
         
-        // Update common text elements
-        document.querySelectorAll('a, button, .text-muted').forEach(element => {
-            if (element.children.length === 0) {
-                translateElement(element, lang);
+        // Update navigation links (excluding language toggle)
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            if (!link.onclick) {
+                const text = link.textContent.trim();
+                if (t[text]) link.textContent = t[text];
             }
         });
         
-        // Update profile content
-        updateProfileContent(lang);
-        
-        // Update language toggle text
+        // Update language toggle
         const langText = document.getElementById('lang-text');
-        if (langText) {
-            langText.textContent = translations[lang].lang_toggle;
-        }
+        if (langText) langText.textContent = t.lang_toggle;
         
-        // Update Menu button
+        // Update menu button
         const menuButton = document.querySelector('.navbar-toggler');
         if (menuButton) {
-            const menuText = menuButton.childNodes[1];
-            if (menuText && menuText.nodeType === Node.TEXT_NODE) {
-                menuText.textContent = ' ' + translations[lang].Menu;
-            }
+            const textNode = Array.from(menuButton.childNodes).find(n => n.nodeType === Node.TEXT_NODE);
+            if (textNode) textNode.textContent = ' ' + t.Menu;
         }
+        
+        // Update publication card links
+        document.querySelectorAll('a').forEach(link => {
+            const text = link.textContent.trim();
+            if (text === 'view all' || text === '查看全部') {
+                link.childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+                        node.textContent = t['view all'] + ' ';
+                    }
+                });
+            } else if (text.startsWith('All publications') || text.startsWith('全部论文')) {
+                link.childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+                        node.textContent = t['All publications'] + ' ';
+                    }
+                });
+            }
+        });
+        
+        // Update social media links
+        const socialLinks = {
+            'Google Scholar': '.fa-google-scholar',
+            'GitHub': '.fa-github',
+            'WeChat': '.fa-weixin',
+            'LinkedIn': '.fa-linkedin',
+            'ORCID': '.fa-orcid'
+        };
+        
+        Object.entries(socialLinks).forEach(([key, iconClass]) => {
+            const link = document.querySelector(`a ${iconClass}`);
+            if (link && link.parentElement) {
+                const textNode = Array.from(link.parentElement.childNodes).find(
+                    n => n.nodeType === Node.TEXT_NODE && n.textContent.trim()
+                );
+                if (textNode) textNode.textContent = ' ' + t[key];
+            }
+        });
+    }
+
+    // Translate publication and news content using data attributes
+    function translateContent(lang) {
+        // Translate publication titles
+        document.querySelectorAll('.publication-title').forEach(el => {
+            const text = lang === 'zh' ? el.dataset.zh : el.dataset.en;
+            if (text && text !== 'undefined') {
+                el.textContent = text;
+            }
+        });
+        
+        // Translate publication venues
+        document.querySelectorAll('.pub-venue').forEach(el => {
+            const text = lang === 'zh' ? el.dataset.zh : el.dataset.en;
+            if (text && text !== 'undefined') {
+                // Extract the year and semantic scholar span
+                const yearMatch = el.textContent.match(/\d{4}/);
+                const year = yearMatch ? yearMatch[0] : '';
+                const semanticSpan = el.querySelector('span[data-semantic-scholar-id]');
+                const miscSpan = el.querySelector('.pub-venue-misc');
+                
+                el.innerHTML = text;
+                if (year) el.innerHTML += ' ' + year;
+                if (miscSpan) {
+                    const miscText = lang === 'zh' ? miscSpan.dataset.zh : miscSpan.dataset.en;
+                    if (miscText && miscText !== 'undefined') {
+                        el.innerHTML += ' ' + miscText;
+                    }
+                }
+                if (semanticSpan) {
+                    el.innerHTML += ' ';
+                    el.appendChild(semanticSpan);
+                }
+            }
+        });
+        
+        // Translate publication abstracts
+        document.querySelectorAll('.pub-abstract').forEach(el => {
+            const text = lang === 'zh' ? el.dataset.zh : el.dataset.en;
+            if (text && text !== 'undefined') {
+                el.textContent = text;
+            }
+        });
+        
+        // Translate news titles
+        document.querySelectorAll('.news-title').forEach(el => {
+            const text = lang === 'zh' ? el.dataset.zh : el.dataset.en;
+            if (text && text !== 'undefined') {
+                el.textContent = text;
+            }
+        });
+        
+        // Translate publication links
+        document.querySelectorAll('.abstract-links').forEach(el => {
+            try {
+                const linksData = lang === 'zh' ? el.dataset.linksZh : el.dataset.linksEn;
+                if (linksData && linksData !== 'undefined' && linksData !== 'null') {
+                    const links = JSON.parse(linksData);
+                    if (links && Object.keys(links).length > 0) {
+                        let html = '';
+                        Object.entries(links).forEach(([key, value]) => {
+                            const url = typeof value === 'object' ? value.url : value;
+                            const target = typeof value === 'object' ? value.target : '_blank';
+                            html += `<a target="${target}" href="${url}">[${key}]</a> `;
+                        });
+                        el.innerHTML = html.trim();
+                    }
+                }
+            } catch (e) {
+                // Keep original links if parsing fails
+            }
+        });
+    }
+
+    // Main translation function
+    function applyTranslations(lang) {
+        updateProfileContent(lang);
+        translateUI(lang);
+        translateContent(lang);
+        
+        // Store data attributes from Jekyll frontmatter
+        storeContentData();
+    }
+
+    // Store content translations from page data
+    function storeContentData() {
+        // This will be populated by the Jekyll template with data attributes
+        // containing the Chinese translations
     }
 
     // Toggle language
@@ -300,9 +374,6 @@
         const newLang = currentLang === 'en' ? 'zh' : 'en';
         setCurrentLanguage(newLang);
         applyTranslations(newLang);
-        
-        // Dispatch custom event for language change
-        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: newLang } }));
     };
 
     // Initialize on page load
@@ -311,4 +382,3 @@
         applyTranslations(currentLang);
     });
 })();
-

@@ -35,21 +35,6 @@ plugins:
 # timezone: Asia/Shanghai
 
 collections:
-  publications:
-    output: false
-  news:
-    output: false
-  showcase:
-    output: false
-
-defaults:
-  - scope:
-      path: ""
-      type: "publications"
-    values:
-      lang: "en"
-  - scope:
-      path: ""
-      type: "news"
-    values:
-      lang: "en"
+  - publications
+  - news
+  - showcase

@@ -30,28 +30,3 @@ body_attr: >-
     </div>
 
 </div>
-
-<script>
-// Hide items based on language after page load
-document.addEventListener('DOMContentLoaded', function() {
-    function filterContentByLanguage() {
-        const currentLang = localStorage.getItem('language') || 'en';
-        
-        // Filter publications by data-lang attribute
-        const publicationItems = document.querySelectorAll('[data-lang]');
-        publicationItems.forEach(item => {
-            const itemLang = item.getAttribute('data-lang');
-            if (itemLang && itemLang !== currentLang) {
-                item.style.display = 'none';
-            } else {
-                item.style.display = '';
-            }
-        });
-    }
-    
-    filterContentByLanguage();
-    
-    // Re-filter when language changes
-    window.addEventListener('languageChanged', filterContentByLanguage);
-});
-</script>
