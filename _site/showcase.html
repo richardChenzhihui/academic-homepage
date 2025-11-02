@@ -22,6 +22,237 @@
         
 
 
+<h1>projects</h1>
+<div class="row grid mb-4">
+    <div class="grid-sizer col-1"></div>
+    
+    <div class="p-2 grid-item col-md-12 col-sm-12 col-12">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="p-4">
+    <h2 data-en="Med-Banana-50K: Large-Scale Medical Image Editing Dataset" data-zh="Med-Banana-50K: 大规模医学图像编辑数据集">Med-Banana-50K: Large-Scale Medical Image Editing Dataset</h2>
+    <hr />
+    
+    <div class="row">
+        <div class="col-md-8">
+            <p data-en="A comprehensive 50K-image dataset for instruction-based medical image editing spanning three modalities and 23 disease types." data-zh="一个包含 5 万张图像的综合数据集，用于基于指令的医学图像编辑，涵盖三种模态和 23 种疾病类型。">
+                A comprehensive 50K-image dataset for instruction-based medical image editing spanning three modalities and 23 disease types.
+            </p>
+            
+            <h4 data-en="Key Features" data-zh="主要特性">Key Features</h4>
+            <ul>
+                <li data-en="&lt;strong&gt;50,635 successful edits&lt;/strong&gt; across 3 medical imaging modalities" data-zh="&lt;strong&gt;50,635 次成功编辑&lt;/strong&gt;，涵盖 3 种医学成像模态">
+                    <strong>50,635 successful edits</strong> across 3 medical imaging modalities
+                </li>
+                <li data-en="&lt;strong&gt;Chest X-ray&lt;/strong&gt;: 12 pathology types (Pneumothorax, Pleural Effusion, etc.)" data-zh="&lt;strong&gt;胸部 X 光&lt;/strong&gt;：12 种病理类型（气胸、胸腔积液等）">
+                    <strong>Chest X-ray</strong>: 12 pathology types (Pneumothorax, Pleural Effusion, etc.)
+                </li>
+                <li data-en="&lt;strong&gt;Brain MRI&lt;/strong&gt;: 4 tumor types (Glioma, Meningioma, Pituitary)" data-zh="&lt;strong&gt;脑部 MRI&lt;/strong&gt;：4 种肿瘤类型（胶质瘤、脑膜瘤、垂体瘤）">
+                    <strong>Brain MRI</strong>: 4 tumor types (Glioma, Meningioma, Pituitary)
+                </li>
+                <li data-en="&lt;strong&gt;Fundus photography&lt;/strong&gt;: 7 disease types (Diabetic Retinopathy, Glaucoma, etc.)" data-zh="&lt;strong&gt;眼底摄影&lt;/strong&gt;：7 种疾病类型（糖尿病视网膜病变、青光眼等）">
+                    <strong>Fundus photography</strong>: 7 disease types (Diabetic Retinopathy, Glaucoma, etc.)
+                </li>
+                <li data-en="&lt;strong&gt;Bidirectional editing&lt;/strong&gt;: lesion addition and removal" data-zh="&lt;strong&gt;双向编辑&lt;/strong&gt;：病变添加和移除">
+                    <strong>Bidirectional editing</strong>: lesion addition and removal
+                </li>
+                <li data-en="&lt;strong&gt;LLM-as-Judge&lt;/strong&gt; quality control with medically grounded rubric" data-zh="&lt;strong&gt;LLM-as-Judge&lt;/strong&gt; 质量控制与医学评分准则">
+                    <strong>LLM-as-Judge</strong> quality control with medically grounded rubric
+                </li>
+                <li data-en="&lt;strong&gt;37K failed attempts&lt;/strong&gt; with full conversation logs for preference learning" data-zh="&lt;strong&gt;37K 失败尝试&lt;/strong&gt;，包含完整对话记录用于偏好学习">
+                    <strong>37K failed attempts</strong> with full conversation logs for preference learning
+                </li>
+            </ul>
+
+            <h4 data-en="Dataset Statistics" data-zh="数据集统计">Dataset Statistics</h4>
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th data-en="Modality" data-zh="模态">Modality</th>
+                        <th data-en="Task" data-zh="任务">Task</th>
+                        <th data-en="Diseases" data-zh="疾病数">Diseases</th>
+                        <th data-en="Success" data-zh="成功">Success</th>
+                        <th data-en="Failed" data-zh="失败">Failed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chest X-ray</td>
+                        <td>Add</td>
+                        <td>12</td>
+                        <td>9,854</td>
+                        <td>7,971</td>
+                    </tr>
+                    <tr>
+                        <td>Chest X-ray</td>
+                        <td>Remove</td>
+                        <td>12</td>
+                        <td>10,667</td>
+                        <td>4,750</td>
+                    </tr>
+                    <tr>
+                        <td>Brain MRI</td>
+                        <td>Add</td>
+                        <td>4</td>
+                        <td>4,536</td>
+                        <td>8,630</td>
+                    </tr>
+                    <tr>
+                        <td>Brain MRI</td>
+                        <td>Remove</td>
+                        <td>4</td>
+                        <td>4,355</td>
+                        <td>6,949</td>
+                    </tr>
+                    <tr>
+                        <td>Fundus</td>
+                        <td>Add</td>
+                        <td>7</td>
+                        <td>18,505</td>
+                        <td>3,162</td>
+                    </tr>
+                    <tr>
+                        <td>Fundus</td>
+                        <td>Remove</td>
+                        <td>7</td>
+                        <td>2,718</td>
+                        <td>6,360</td>
+                    </tr>
+                    <tr class="font-weight-bold">
+                        <td colspan="2" data-en="Total" data-zh="总计">Total</td>
+                        <td>23+</td>
+                        <td>50,635</td>
+                        <td>37,822</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="col-md-4">
+            <img src="/assets/images/covers/medbanana_cover.png" alt="Med-Banana-50K samples" class="img-fluid rounded shadow-sm mb-3" />
+            
+            <div class="d-grid gap-2">
+                <a href="https://arxiv.org/submit/6942444/view" target="_blank" class="btn btn-primary btn-sm">
+                    📄 <span data-en="Read Paper" data-zh="阅读论文">Read Paper</span>
+                </a>
+                <a href="https://github.com/richardChenzhihui/med-banana-50k/" target="_blank" class="btn btn-secondary btn-sm">
+                    💻 <span data-en="View Code" data-zh="查看代码">View Code</span>
+                </a>
+                <a href="https://github.com/richardChenzhihui/med-banana-50k/" target="_blank" class="btn btn-info btn-sm">
+                    📦 <span data-en="Dataset (Coming Soon)" data-zh="数据集（即将发布）">Dataset (Coming Soon)</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-3">
+        <p class="small text-muted" data-en="&lt;strong&gt;Note:&lt;/strong&gt; Full dataset will be released on Hugging Face upon paper acceptance." data-zh="&lt;strong&gt;注意：&lt;/strong&gt;完整数据集将在论文接收后在 Hugging Face 上发布。">
+            <strong>Note:</strong> Full dataset will be released on Hugging Face upon paper acceptance.
+        </p>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+    
+    <div class="p-2 grid-item col-md-12 col-sm-12 col-12">
+        <div class="card border-0 shadow-sm bg-white">
+            <div class="p-4">
+    <h2 data-en="DivScore: Zero-Shot LLM Detection in Specialized Domains" data-zh="DivScore: 专业领域中的零样本大语言模型检测">DivScore: Zero-Shot LLM Detection in Specialized Domains</h2>
+    <hr />
+    
+    <div class="row">
+        <div class="col-md-8">
+            <p data-en="A zero-shot detection framework for identifying LLM-generated text in specialized domains like medicine and law, using normalized entropy-based scoring and domain knowledge distillation." data-zh="一个零样本检测框架，用于识别医学和法律等专业领域中的大语言模型生成文本，使用归一化熵评分和领域知识蒸馏。">
+                A zero-shot detection framework for identifying LLM-generated text in specialized domains like medicine and law, using normalized entropy-based scoring and domain knowledge distillation.
+            </p>
+            
+            <h4 data-en="Key Innovations" data-zh="核心创新">Key Innovations</h4>
+            <ul>
+                <li data-en="&lt;strong&gt;Zero-shot detection&lt;/strong&gt;: No training data required for new domains" data-zh="&lt;strong&gt;零样本检测&lt;/strong&gt;：新领域无需训练数据">
+                    <strong>Zero-shot detection</strong>: No training data required for new domains
+                </li>
+                <li data-en="&lt;strong&gt;Normalized entropy scoring&lt;/strong&gt;: Robust metric for specialized text" data-zh="&lt;strong&gt;归一化熵评分&lt;/strong&gt;：专业文本的稳健指标">
+                    <strong>Normalized entropy scoring</strong>: Robust metric for specialized text
+                </li>
+                <li data-en="&lt;strong&gt;Domain knowledge distillation&lt;/strong&gt;: Leverages domain-specific patterns" data-zh="&lt;strong&gt;领域知识蒸馏&lt;/strong&gt;：利用领域特定模式">
+                    <strong>Domain knowledge distillation</strong>: Leverages domain-specific patterns
+                </li>
+                <li data-en="&lt;strong&gt;Cross-domain robustness&lt;/strong&gt;: Tested on medical, legal, and financial texts" data-zh="&lt;strong&gt;跨领域鲁棒性&lt;/strong&gt;：在医学、法律和金融文本上测试">
+                    <strong>Cross-domain robustness</strong>: Tested on medical, legal, and financial texts
+                </li>
+            </ul>
+
+            <h4 data-en="Performance Highlights" data-zh="性能亮点">Performance Highlights</h4>
+            <table class="table table-sm table-bordered">
+                <thead>
+                    <tr>
+                        <th data-en="Metric" data-zh="指标">Metric</th>
+                        <th data-en="Improvement" data-zh="提升">Improvement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AUROC</td>
+                        <td><span class="badge badge-success">+14.4%</span> <span data-en="vs. SOTA" data-zh="相比最优">vs. SOTA</span></td>
+                    </tr>
+                    <tr>
+                        <td data-en="Recall @ 0.1% FPR" data-zh="召回率 @ 0.1% 误报率">Recall @ 0.1% FPR</td>
+                        <td><span class="badge badge-success">+64.0%</span> <span data-en="vs. SOTA" data-zh="相比最优">vs. SOTA</span></td>
+                    </tr>
+                    <tr>
+                        <td data-en="Zero-shot Capability" data-zh="零样本能力">Zero-shot Capability</td>
+                        <td><span class="badge badge-primary" data-en="No training needed" data-zh="无需训练">No training needed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 data-en="Applications" data-zh="应用场景">Applications</h4>
+            <ul>
+                <li data-en="Detecting AI-generated medical content to combat misinformation" data-zh="检测 AI 生成的医学内容以打击错误信息">
+                    Detecting AI-generated medical content to combat misinformation
+                </li>
+                <li data-en="Verifying authenticity of legal documents and contracts" data-zh="验证法律文件和合同的真实性">
+                    Verifying authenticity of legal documents and contracts
+                </li>
+                <li data-en="Ensuring integrity in academic and scientific publishing" data-zh="确保学术和科学出版的完整性">
+                    Ensuring integrity in academic and scientific publishing
+                </li>
+                <li data-en="Quality control for financial reports and analysis" data-zh="金融报告和分析的质量控制">
+                    Quality control for financial reports and analysis
+                </li>
+            </ul>
+        </div>
+        
+        <div class="col-md-4">
+            <img src="/assets/images/covers/divscore_cover.png" alt="DivScore framework" class="img-fluid rounded shadow-sm mb-3" />
+            
+            <div class="d-grid gap-2">
+                <a href="https://arxiv.org/abs/2506.06705" target="_blank" class="btn btn-primary btn-sm">
+                    📄 <span data-en="Read Paper" data-zh="阅读论文">Read Paper</span>
+                </a>
+                <a href="https://github.com/richardChenzhihui/DivScore" target="_blank" class="btn btn-secondary btn-sm">
+                    💻 <span data-en="View Code" data-zh="查看代码">View Code</span>
+                </a>
+            </div>
+            
+            <div class="mt-3 p-2 bg-light rounded">
+                <p class="small mb-1"><strong data-en="Published at" data-zh="发表于">Published at</strong></p>
+                <p class="small mb-0">
+                    <span class="badge badge-success" data-en="EMNLP 2025" data-zh="EMNLP 2025">EMNLP 2025</span>
+                    <span class="badge badge-info" data-en="Main Conference" data-zh="主会议">Main Conference</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+    
+</div>
+
 <h1></h1>
 <div class="row grid mb-4">
     <div class="grid-sizer col-1"></div>
@@ -267,7 +498,7 @@ $a^2 + b^2 = c^2$
         <div class="row my-3">
             <div class="col-6">
                 <div class="text-muted">
-                    <i>Last updated: Oct 2025</i>
+                    <i>Last updated: Nov 2025</i>
                 </div>
             </div>
             <div class="col-6">

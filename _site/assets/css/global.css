@@ -90,3 +90,20 @@ div.lazy {
     font-family: Courier, monospace;
 }
 
+/* Publication title link styling */
+.publication-title-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.publication-title-link:hover {
+    color: #007bff;
+    text-decoration-color: #007bff;
+}
+
+.publication-title-link .title-text {
+    transition: color 0.3s ease;
+}
+
